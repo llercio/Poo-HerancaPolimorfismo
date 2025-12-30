@@ -1,44 +1,24 @@
 package br.com.pratica.modelos;
 
 public class ContaBancaria {
-    private String titular;
-    private int numeroConta;
-    private double saldo;
+    protected double saldo;
 
 
-    public double depositar(double deposito) {
-        return saldo + deposito;
+    public void depositar(double valor) {
+        saldo += valor;
+        System.out.println("Depósito de " + valor + " Realizado. Saldo atual: " + saldo + ".");
     }
 
-    public double sacar(double saque) {
-        return saldo - saque;
+    public void sacar(double valor) {
+        if (valor < saldo) {
+            saldo -= valor;
+            System.out.println("Saque de " + valor + " realizado com sucesso! Saldo atual: " + saldo + ".");
+        } else {
+            System.out.println("Saldo insuficiente para saque!");
+        }
     }
 
-    public double consultarSaldo() {
-        return saldo;
-    }
-
-    public String getTitular() {
-        return titular;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
-
-    public int getNumeroConta() {
-        return numeroConta;
-    }
-
-    public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void consultarSaldo() {
+        System.out.println("Saldo atual: " + saldo);
     }
 }
