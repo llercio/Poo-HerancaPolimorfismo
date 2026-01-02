@@ -9,7 +9,7 @@ public class ContaMain {
         conta.depositar(1000);
         conta.consultarSaldo();
         System.out.println();
-        // Realizando operações na conta corrente
+
         ContaCorrente contaCorrente = new ContaCorrente();
         contaCorrente.setTarifaMensal(49.99);
         contaCorrente.depositar(500);
